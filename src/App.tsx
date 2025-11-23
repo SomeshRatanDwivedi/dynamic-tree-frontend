@@ -77,8 +77,7 @@ function App() {
     };
     try {
       const savedTree = await saveTreeData(newTree);
-      newTree.id = savedTree.id+"";
-      setTreeData(prev => [...prev, newTree as TreeNodeData]);
+      setTreeData(prev => [...prev, savedTree]);
     } catch (err) {
       console.log("err in saving new root tree", err);
     }
